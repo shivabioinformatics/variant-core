@@ -6,9 +6,27 @@ VariantCore is a lightweight, memory-efficient library for parsing VCF and BED f
 
 Most ad-hoc bioinformatics scripts lack type safety and consume excessive memory. I built this library to demonstrate how Domain-Driven Design can improve pipeline reliability.
 
-
 **Usage**
 
-```
-from variant_core.vcf import VCFReader
-```
+## Installation
+
+You can install `VariantCore` directly from GitHub using pip:
+
+```bash
+pip install git+[https://github.com/shivabioinformatics/variant-core.git](https://github.com/shivabioinformatics/variant-core.git)
+
+
+
+### Reading VCFs
+```python
+from variant_core import VCFReader
+
+# Lazy loading with generators keeps memory usage low
+reader = VCFReader("data/sample.vcf")
+
+for variant in reader:
+    if variant.is_snp():
+        print(f"Found SNP: {variant.chrom}:{variant.pos}")
+
+
+
