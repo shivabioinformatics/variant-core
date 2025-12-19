@@ -12,7 +12,7 @@ Most ad-hoc bioinformatics scripts lack type safety and consume excessive memory
 
 You can install `VariantCore` directly from GitHub using pip:
 
-```bash
+```{bash}
 pip install git+[https://github.com/shivabioinformatics/variant-core.git](https://github.com/shivabioinformatics/variant-core.git)```
 
 
